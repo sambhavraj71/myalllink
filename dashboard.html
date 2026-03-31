@@ -615,7 +615,7 @@
 
         async function loadUserData() {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/api/users/${userId}`);
+                const response = await fetch(`https://myalllink-backend.onrender.com/api/users/${userId}`);
                 const user = await response.json();
                 
                 document.getElementById('displayName').innerText = user.displayName || username;
@@ -634,7 +634,7 @@
 
         async function loadStats() {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/api/users/${userId}/stats`);
+                const response = await fetch(`http://myalllink-backend.onrender.com/${userId}/stats`);
                 const data = await response.json();
                 document.getElementById('totalLinks').innerText = data.totalLinks;
                 document.getElementById('totalClicks').innerText = data.totalClicks;
@@ -646,7 +646,7 @@
         async function loadLinks() {
             try {
                 console.log('Loading links for user ID:', userId);
-                const response = await fetch(`http://127.0.0.1:5000/api/links/user/${userId}`);
+                const response = await fetch(`http://myalllink-backend.onrender.com/api/links/user/${userId}`);
                 const links = await response.json();
                 console.log('Loaded links:', links);
                 currentLinks = links;
